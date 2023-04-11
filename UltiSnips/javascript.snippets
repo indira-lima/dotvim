@@ -5,3 +5,34 @@ endsnippet
 snippet cb "Commentary block" 
 {/* $1 */}
 endsnippet
+
+snippet stackRoutes "React native routes" b
+import { createStackNavigator } from "@react-navigation/stack";
+
+const $1Stack = createStackNavigator();
+
+/**
+ *  
+ */
+export default function $1Routes() {
+	return (
+		<$1Stack.Navigator
+			initialRouteName="$4"
+			screenOptions={({ }) => ({
+				animation: 'slide_from_right',
+				headerTitleStyle: globalStyles$5.title,
+			})}
+		>
+			<$1Stack.Screen
+				name="$2"
+				component={$3}
+				options={({}) => ({
+					title: "$4",
+				})}
+			/>
+			$6
+		</$1Stack.Navigator>
+	)
+}
+
+endsnippet

@@ -44,12 +44,12 @@ export default $1;
 endsnippet
 
 snippet us "useState snippet" b
-	const [$1, set${1/\w+\s*/\u$0/}] = useState<$2>($3);
+	const [$1, set${1/\w+\s*/\u$0/}] = React.useState<$2>($3);
 $4
 endsnippet
 
 snippet ue "useEffect snippet" b
-	useEffect(($1) => {
+	React.useEffect(($1) => {
 		$2
 
 		return () => {}
@@ -58,19 +58,19 @@ $4
 endsnippet
 
 snippet um "useMemo snippet" b
-	const $1 = useMemo<$2>(() => {
+	const $1 = React.useMemo<$2>(() => {
 		return $3
 	}, [$4])
 $5
 endsnippet
 
 snippet ur "useRef snippet" b
-	const $1 = useRef<$2>($3);
+	const $1 = React.useRef<$2>($3);
 $4
 endsnippet
 
 snippet uc "useCallback snippet" b
-	const $1 = useCallback(() => {
+	const $1 = React.useCallback(() => {
 		$2
 	}, [$3])
 $4
@@ -102,4 +102,52 @@ endsnippet
 
 snippet cb "TSX Comentary block" b
 {/* $1 */}
+endsnippet
+
+snippet newContext "Create a new React Context" b
+import React from "react";
+
+interface $1ContextValue {
+	$3: $4,
+	set${3/\w+\s*/\u$0/}: (x: $4) => void;
+	
+}
+
+const $1Context = React.createContext<$1ContextValue | null>(null);
+export default $1Context;
+
+/**
+ * TODO: $1 Documentation
+ */
+export const $1Provider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+	const [$3, set${3/\w+\s*/\u$0/}] = React.useState<$4>($5);
+
+	return (
+		<$1Context.Provider
+			value={{
+				$3, 
+				set${3/\w+\s*/\u$0/},
+			}}
+		>
+			{children}
+		</$1Context.Provider>
+	);
+};
+
+export const use$1 = () => {
+	const context = React.useContext($1Context);
+
+	if (!context) {
+		throw new Error('use$1 must be used within an $1Provider');
+	}
+
+	return context;
+}
+
+endsnippet
+
+snippet useContext "Call the hook for using a context" b
+const { $2 } = use$1$3();
 endsnippet
