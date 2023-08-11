@@ -4,6 +4,9 @@
 " Select entire buffer
 nnoremap <silent> <leader>a ggVG
 
+" Yank entire buffer
+nnoremap <silent> <leader>ay ggVGy
+
 " Shortcut to edit the init.vim configuration file: (e)dit (c)onfiguration
 nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
 
