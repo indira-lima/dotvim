@@ -11,9 +11,6 @@ PackAdd romgrk/barbar.nvim
 """" Mappings
 """"""""""""""""""""""""""""""""""""""""
 
-" enable saving tabnames in the sessions
-set sessionoptions+=tabpages,globals
-
 " new tab
 nnoremap <silent>    <leader>t :tabnew<CR>
 " reopen last closed tab
@@ -49,98 +46,120 @@ nnoremap <silent>		 <leader>p <Cmd>BufferPick<CR>
 """" Options
 """"""""""""""""""""""""""""""""""""""""
 
-" NOTE: If barbar's option dict isn't created yet, create it
-let bufferline = get(g:, 'bufferline', {})
+let g:barbar_auto_setup = v:false " disable auto-setup
+lua << EOF
 
-" Enable/disable animations
-let bufferline.animation = v:false
+-- enable saving tabnames in the sessions
+vim.opt.sessionoptions:append 'globals'
+require'barbar'.setup {
+	animation = true,
 
-" Enable/disable auto-hiding the tab bar when there is a single buffer
-let bufferline.auto_hide = v:false
+	-- Enable/disable auto-hiding the tab bar when there is a single buffer
+	auto_hide = false,
 
-" Enable/disable current/total tabpages indicator (top right corner)
-let bufferline.tabpages = v:true
+	-- Enable/disable current/total tabpages indicator (top right corner)
+	tabpages = true,
 
-" Enable/disable close button
-let bufferline.closable = v:true
+  -- Enables/disable clickable tabs
+  --  - left-click: go to buffer
+  --  - middle-click: delete buffer
+  clickable = true,
 
-" Enables/disable clickable tabs
-"  - left-click: go to buffer
-"  - middle-click: delete buffer
-let bufferline.clickable = v:true
+	-- Excludes buffers from the tabline
+  exclude_ft = {'fugitive'},
+  exclude_name = {'/usr/bin/zsh'},
 
-" Enables / disables diagnostic symbols
-" ERROR / WARN / INFO / HINT
-let bufferline.diagnostics = [
-  \ {'enabled': v:true, 'icon': 'ﬀ'},
-  \ {'enabled': v:false},
-  \ {'enabled': v:false},
-  \ {'enabled': v:true},
-\]
+  -- A buffer to this direction will be focused (if it exists) when closing the current buffer.
+  -- Valid options are 'left' (the default), 'previous', and 'right'
+  focus_on_close = 'previous',
+	
+  -- Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
+  hide = {extensions = current, inactive = visible},
 
-" Excludes buffers from the tabline
-let bufferline.exclude_ft = ['fugitive']
-let bufferline.exclude_name = ['/usr/bin/zsh']
+  -- Disable highlighting alternate buffers
+  --highlight_alternate = false,
 
-" Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
-" let bufferline.hide = {'extensions': v:true, 'inactive': v:true}
+  -- Disable highlighting file icons in inactive buffers
+  --highlight_inactive_file_icons = false,
 
-" highligh alternate buffers
-let bufferline.highlight_alternate = v:true
+  -- Enable highlighting visible buffers
+  highlight_visible = true,
 
-" highlight file icons in inactive buffers
-let bufferline.highlight_inactive_file_icons = v:true
+	icons = {
+    -- Configure the base icons on the bufferline.
+    -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
+    buffer_index = true,
+    buffer_number = false,
+    button = '',
+    -- Enables / disables diagnostic symbols
+    diagnostics = {
+      [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
+      [vim.diagnostic.severity.WARN] = {enabled = false},
+      [vim.diagnostic.severity.INFO] = {enabled = false},
+      [vim.diagnostic.severity.HINT] = {enabled = true},
+    },
+    gitsigns = {
+      added = {enabled = true, icon = '+'},
+      changed = {enabled = true, icon = '~'},
+      deleted = {enabled = true, icon = '-'},
+    },
+    filetype = {
+      -- Sets the icon's highlight group.
+      -- If false, will use nvim-web-devicons colors
+      custom_colors = false,
 
-" highlight visible buffers
-let bufferline.highlight_visible = v:true
+      -- Requires `nvim-web-devicons` if `true`
+      enabled = true,
+    },
+    separator = {left = '', right = ''},
 
-" Enable/disable icons
-" if set to 'buffer_number', will show buffer number in the tabline
-" if set to 'numbers', will show buffer index in the tabline
-" if set to 'both', will show buffer index and icons in the tabline
-" if set to 'buffer_number_with_icon', will show buffer number and icons in the tabline
-let bufferline.icons = 'both'
+    -- If true, add an additional separator at the end of the buffer list
+    separator_at_end = true,
 
-" Sets the icon's highlight group.
-" If false, will use nvim-web-devicons colors
-let bufferline.icon_custom_colors = v:false
+    -- Configure the icons on the bufferline when modified or pinned.
+    -- Supports all the base icon options.
+    modified = {button = '●'},
+    pinned = {button = '', filename = true},
 
-" Configure icons on the bufferline.
-let bufferline.icon_separator_active = '▎'
-let bufferline.icon_separator_inactive = '▎'
-let bufferline.icon_close_tab = ''
-let bufferline.icon_close_tab_modified = '●'
-let bufferline.icon_pinned = '!'
+    -- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
+    preset = 'powerline',
 
-" If true, new buffers will be inserted at the start/end of the list.
-" Default is to insert after current buffer.
-let bufferline.insert_at_start = v:false
-let bufferline.insert_at_end = v:false
+    -- Configure the icons on the bufferline based on the visibility of a buffer.
+    -- Supports all the base icon options, plus `modified` and `pinned`.
+    alternate = {filetype = {enabled = false}},
+    current = {buffer_index = true},
+    inactive = {button = '×'},
+    visible = {modified = {buffer_number = true}},
+  },
 
-" Sets the maximum padding width with which to surround each tab.
-let bufferline.maximum_padding = 1
+	-- Sets the maximum padding width with which to surround each tab
+  maximum_padding = 1,
 
-" Sets the minimum padding width with which to surround each tab.
-let bufferline.minimum_padding = 1
+  -- Sets the minimum padding width with which to surroundound each tab
+  minimum_padding = 1,
 
-" Sets the maximum buffer name length.
-let bufferline.maximum_length = 30
+  -- Sets the maximum buffer name length.
+  maximum_length = 30,
 
-" If set, the letters for each buffer in buffer-pick mode will be
-" assigned based on their name. Otherwise or in case all letters are
-" already assigned, the behavior is to assign letters in order of
-" usability (see order below)
-let bufferline.semantic_letters = v:true
+  -- Sets the minimum buffer name length.
+  minimum_length = 10,
 
-" New buffer letters are assigned in this order. This order is
-" optimal for the qwerty keyboard layout but might need adjustement
-" for other layouts.
-let bufferline.letters =
-  \ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
+  -- New buffer letters are assigned in this order. This order is
+  -- optimal for the qwerty keyboard layout but might need adjustment
+  -- for other layouts.
+	semantic_letters = true,
+  letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
 
-" Sets the name of unnamed buffers. By default format is '[Buffer X]'
-" where X is the buffer number. But only a static string is accepted here.
-let bufferline.no_name_title = '~void~'
+  -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
+  -- where X is the buffer number. But only a static string is accepted here.
+  no_name_title = '~void~',
+
+	  -- Set the filetypes which barbar will offset itself for
+  sidebar_filetypes = {
+    NvimTree = true,
+  },
+}
+EOF
 
 """"""""""""""""""""""""""""""""""""""""
 """" Colorscheme
