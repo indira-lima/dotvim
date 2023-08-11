@@ -1,2 +1,2 @@
-colorscheme 
+colorscheme duskfox
 
