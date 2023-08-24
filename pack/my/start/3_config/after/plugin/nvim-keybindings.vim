@@ -31,6 +31,9 @@ nnoremap <silent> <leader>bv :vnew<CR>
 " open a terminal in a horizontal buffer
 nnoremap <silent> <leader>bt :call OpenTerminalHorizontal()<CR>
 
+" delete a buffer instead of closing it (util for killing terminal buffer)
+nnoremap <silent> <leader>bd :bd!<CR>
+
 " Undo hunk (Git Gutter)
 nnoremap <silent> <leader>uh :GitGutterUndoHunk<CR>
 
