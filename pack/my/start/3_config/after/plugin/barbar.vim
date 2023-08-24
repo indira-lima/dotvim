@@ -77,10 +77,10 @@ require'barbar'.setup {
   hide = {extensions = current, inactive = visible},
 
   -- Disable highlighting alternate buffers
-  --highlight_alternate = false,
+  highlight_alternate = true,
 
   -- Disable highlighting file icons in inactive buffers
-  --highlight_inactive_file_icons = false,
+  highlight_inactive_file_icons = true,
 
   -- Enable highlighting visible buffers
   highlight_visible = true,
@@ -111,7 +111,7 @@ require'barbar'.setup {
       -- Requires `nvim-web-devicons` if `true`
       enabled = true,
     },
-    separator = {left = '', right = ''},
+    separator = {left = '|', right = ''},
 
     -- If true, add an additional separator at the end of the buffer list
     separator_at_end = true,
@@ -119,17 +119,9 @@ require'barbar'.setup {
     -- Configure the icons on the bufferline when modified or pinned.
     -- Supports all the base icon options.
     modified = {button = '●'},
-    pinned = {button = '', filename = true},
 
     -- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
-    preset = 'powerline',
-
-    -- Configure the icons on the bufferline based on the visibility of a buffer.
-    -- Supports all the base icon options, plus `modified` and `pinned`.
-    alternate = {filetype = {enabled = false}},
-    current = {buffer_index = true},
-    inactive = {button = '×'},
-    visible = {modified = {buffer_number = true}},
+    preset = 'default',
   },
 
 	-- Sets the maximum padding width with which to surround each tab
@@ -160,11 +152,3 @@ require'barbar'.setup {
   },
 }
 EOF
-
-""""""""""""""""""""""""""""""""""""""""
-"""" Colorscheme
-""""""""""""""""""""""""""""""""""""""""
-
-let fg_target = 'magenta'
-
-
