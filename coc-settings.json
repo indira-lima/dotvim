@@ -3,9 +3,17 @@
 	"pyright.enable": false,
 	"python.formatting.autopep8Path": "~/.local/bin/autopep8",
   "snippets.ultisnips.pythonPrompt": false,
+	"codeLens.enable": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+	"typescript.referencesCodeLens.enabled": true,
+	"javascript.referencesCodeLens.enabled": true,
+	"tsserver.log": "normal",
+	"tsserver.trace.server": "off",
+	"diagnostic.virtualText": true,
 	"languageserver": {
 		"vimls": {
-			"module": "~/.nvm/versions/node/v16.17.1/bin/vim-language-server",
+			"module": "~/.nvm/versions/node/v16.19.0/bin/vim-language-server",
 			"args": [
 				"--node-ipc"
 			],
