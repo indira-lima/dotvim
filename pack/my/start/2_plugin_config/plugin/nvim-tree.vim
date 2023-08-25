@@ -21,12 +21,6 @@ require("nvim-tree").setup({
     width = 40,
     preserve_window_proportions = true,
     adaptive_size = true,
-    mappings = {
-      list = {
-        { key = "<C-m>", action = "toggle_mark" },
-        { key = "m", action = "full_rename" },
-      },
-    },
   },
 	update_focused_file = {
 		enable = true,
@@ -64,7 +58,7 @@ require("nvim-tree").setup({
 		special_files = { "Session.vim", "ROADMAP.md", "Makefile", "README.md", "readme.md" },
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
 })
 
