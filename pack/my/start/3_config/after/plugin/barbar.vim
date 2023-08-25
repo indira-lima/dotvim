@@ -67,7 +67,7 @@ require'barbar'.setup {
 
 	-- Excludes buffers from the tabline
   exclude_ft = {'fugitive'},
-  exclude_name = {'/usr/bin/zsh'},
+  exclude_name = {'/usr/bin/zsh', 'nvim'},
 
   -- A buffer to this direction will be focused (if it exists) when closing the current buffer.
   -- Valid options are 'left' (the default), 'previous', and 'right'
