@@ -7,6 +7,10 @@
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" disable netrw for nvim-tree
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 "" Environment configuration
 let g:enablenvim=1
 

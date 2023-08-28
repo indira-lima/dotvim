@@ -3,6 +3,7 @@ if !g:enablenvim
 endif
 
 " A File Explorer For Neovim Written In Lua
+PackAdd nvim-tree/nvim-web-devicons
 PackAdd nvim-tree/nvim-tree.lua
 
 " start of lua heredoc
@@ -41,8 +42,13 @@ require("nvim-tree").setup({
 		icons = {
 			padding = " ",
 			show = {
+				file = true,
+				folder = true,
 				folder_arrow = false,
+				modifed = false,
 			},
+			modified_placement = "after",
+			git_placement = "after",
 			glyphs = {
 				git = {
 					unstaged = "~",

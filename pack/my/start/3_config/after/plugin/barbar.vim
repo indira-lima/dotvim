@@ -4,7 +4,6 @@ if !g:enablenvim
 	finish
 endif
 
-PackAdd nvim-tree/nvim-web-devicons
 PackAdd romgrk/barbar.nvim
 
 """"""""""""""""""""""""""""""""""""""""
