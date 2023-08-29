@@ -45,7 +45,7 @@ require("nvim-tree").setup({
 				file = true,
 				folder = true,
 				folder_arrow = false,
-				modifed = false,
+				modified = false,
 			},
 			modified_placement = "after",
 			git_placement = "after",
