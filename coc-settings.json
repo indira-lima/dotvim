@@ -1,49 +1,70 @@
 {
-	"typescript.updateImportsOnFileMove.enable": true,
-	"pyright.enable": false,
-	"python.formatting.autopep8Path": "~/.local/bin/autopep8",
+  "coc.preferences.formatOnSave": true,
+
+  "pyright.enable": false,
+  "python.formatting.autopep8Path": "~/.local/bin/autopep8",
+
   "snippets.ultisnips.pythonPrompt": false,
-	"codeLens.enable": true,
-  "javascript.referencesCodeLens.showOnAllFunctions": true,
-  "typescript.referencesCodeLens.showOnAllFunctions": true,
-	"typescript.referencesCodeLens.enabled": true,
-	"javascript.referencesCodeLens.enabled": true,
-	"tsserver.log": "normal",
-	"tsserver.trace.server": "off",
-	"diagnostic.virtualText": true,
-	"languageserver": {
-		"vimls": {
-			"module": "~/.nvm/versions/node/v16.19.0/bin/vim-language-server",
-			"args": [
-				"--node-ipc"
-			],
-			"initializationOptions": {
-				"isNeovim": true, // is neovim, default false
-				"iskeyword": "@,48-57,_,192-255,-#", // vim iskeyword option
-				"vimruntime": "", // $VIMRUNTIME option
-				"runtimepath": "", // vim runtime path separate by `,`
-				"diagnostic": {
-					"enable": true
-				},
-				"indexes": {
-					"runtimepath": true, // if index runtimepath's vim files this will effect the suggest
-					"gap": 100, // index time gap between next file
-					"count": 3, // count of files index at the same time
-					"projectRootPatterns": [
-						"strange-root-pattern",
-						".git",
-						"autoload",
-						"plugin"
-					] // Names of files used as the mark of project root. If empty, the default value [".git", "autoload", "plugin"] will be used
-				},
-				"suggest": {
-					"fromVimruntime": true, // completionItems from vimruntime's vim files
-					"fromRuntimepath": false // completionItems from runtimepath's vim files, if this is true that fromVimruntime is true
-				}
-			},
-			"filetypes": [
-				"vim"
-			]
-		}
-	}
+
+  "diagnostic.virtualText": false,
+  "diagnostic.floatConfig": {
+    "focusable": true,
+    "close": true
+  },
+
+  "links.enable": true,
+  "links.tooltip": true,
+  "links.highlight": true,
+
+  "tsserver.log": "normal",
+  "tsserver.trace.server": "off",
+
+  "codeLens.enable": true,
+
+  "javascript.referencesCodeLens.showOnAllFunctions": false,
+  "javascript.referencesCodeLens.enabled": true,
+
+  "typescript.referencesCodeLens.showOnAllFunctions": false,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+
+  "vimlsp.diagnostic.enable": true,
+  "languageserver": {
+    "vimls": {
+      "module": "~/.nvm/versions/node/v18.15.0/bin/vim-language-server",
+      "args": ["--node-ipc"],
+      "initializationOptions": {
+        "isNeovim": true, // is neovim, default false
+        "iskeyword": "@,48-57,_,192-255,-#", // vim iskeyword option
+        "vimruntime": "", // $VIMRUNTIME option
+        "runtimepath": "", // vim runtime path separate by `,`
+        "diagnostic": {
+          "enable": true
+        },
+        "indexes": {
+          "runtimepath": true, // if index runtimepath's vim files this will effect the suggest
+          "gap": 100, // index time gap between next file
+          "count": 3, // count of files index at the same time
+          "projectRootPatterns": [
+            "strange-root-pattern",
+            ".git",
+            "autoload",
+            "plugin"
+          ] // Names of files used as the mark of project root. If empty, the default value [".git", "autoload", "plugin"] will be used
+        },
+        "suggest": {
+          "fromVimruntime": true, // completionItems from vimruntime's vim files
+          "fromRuntimepath": false // completionItems from runtimepath's vim files, if this is true that fromVimruntime is true
+        }
+      },
+      "filetypes": ["vim"]
+    }
+  }
 }
