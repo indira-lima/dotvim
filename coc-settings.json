@@ -19,21 +19,21 @@
   "tsserver.log": "normal",
   "tsserver.trace.server": "off",
 
-  "codeLens.enable": true,
+  "codeLens.enable": false,
 
   "javascript.referencesCodeLens.showOnAllFunctions": false,
-  "javascript.referencesCodeLens.enabled": true,
+  "javascript.referencesCodeLens.enabled": false,
 
   "typescript.referencesCodeLens.showOnAllFunctions": false,
-  "typescript.referencesCodeLens.enabled": true,
+  "typescript.referencesCodeLens.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "prompt",
 
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.parameterNames.enabled": "literals",
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": false,
+  "typescript.inlayHints.parameterNames.enabled": "none",
+  "typescript.inlayHints.enumMemberValues.enabled": false,
+  "typescript.inlayHints.parameterTypes.enabled": false,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
 
   "vimlsp.diagnostic.enable": true,
   "languageserver": {
