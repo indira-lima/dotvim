@@ -27,5 +27,5 @@ noremap Zo <c-w>=
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " turn off search highlighting with <CR> (carriage-return)
-nnoremap <CR> :nohlsearch<CR><CR>
+nnoremap <CR> :nohlsearch<CR>
 
