@@ -43,7 +43,7 @@ call coc#add_extension('coc-vimlsp')
 " call coc#add_extension('coc-java')
 
 "" PHP
-call coc#add_extension('coc-phpls')
+" call coc#add_extension('coc-phpls')
 
 """" Coc configuration
 
