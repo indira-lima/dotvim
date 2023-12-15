@@ -1,7 +1,7 @@
 extends typescript
 
 snippet rnfc "React Native Functional Component" b
-import React from "react";
+import { FC } from "react";
 import { View } from "react-native";
 
 interface ${1:`!p snip.rv = snip.basename`}Props {
@@ -11,7 +11,7 @@ interface ${1:`!p snip.rv = snip.basename`}Props {
 /**
  * ${2:$1 documentation}
  */
-const $1: React.FunctionComponent<$1Props> = ($3) => {
+const $1: FC<$1Props> = ($3) => {
 	return (
 		<${4:View}>
 			${5:{/*TODO: Component body*/}}
@@ -23,7 +23,7 @@ export default $1;
 endsnippet
 
 snippet rfc "React Functional Component" b
-import React from "react";
+import { FC } from "react";
 
 interface ${1:`!p snip.rv = snip.basename`}Props {
 
@@ -32,7 +32,7 @@ interface ${1:`!p snip.rv = snip.basename`}Props {
 /**
  * ${2:$1 documentation}
  */
-const $1: React.FunctionComponent<$1Props> = ($3) => {
+const $1: FC<$1Props> = ($3) => {
 	return (
 		<${4:div}>
 			${5:{/*TODO: Component body*/}}
@@ -56,16 +56,16 @@ interface $1ContextValue {
 	
 }
 
-const $1Context = React.createContext<$1ContextValue | null>(null);
+const $1Context = createContext<$1ContextValue | null>(null);
 export default $1Context;
 
 /**
  * TODO: $1 Documentation
  */
-export const $1Provider: React.FC<{ children: React.ReactNode }> = ({
+export const $1Provider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
-	const [$3, set${3/\w+\s*/\u$0/}] = React.useState<$4>($5);
+	const [$3, set${3/\w+\s*/\u$0/}] = useState<$4>($5);
 
 	return (
 		<$1Context.Provider
@@ -80,7 +80,7 @@ export const $1Provider: React.FC<{ children: React.ReactNode }> = ({
 };
 
 export const use$1 = () => {
-	const context = React.useContext($1Context);
+	const context = useContext($1Context);
 
 	if (!context) {
 		throw new Error('use$1 must be used within an $1Provider');
