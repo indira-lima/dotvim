@@ -45,7 +45,7 @@ require("nvim-tree").setup({
 				file = true,
 				folder = true,
 				folder_arrow = false,
-				modified = false,
+				modified = true,
 			},
 			modified_placement = "after",
 			git_placement = "after",
@@ -65,6 +65,7 @@ require("nvim-tree").setup({
   },
   filters = {
     dotfiles = false,
+		custom = { "^.git$" }
   },
 })
 
