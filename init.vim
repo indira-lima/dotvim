@@ -2,7 +2,7 @@
 """" This file includes all the configuration files
 """" Each file has it's own escope, like plugins and key bindings
 """"
-"""" Author: Dahan Schuster
+"""" Author: Indira Lima
 """" Github: https://github.com/Dahan-Schuster/dotfiles
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""

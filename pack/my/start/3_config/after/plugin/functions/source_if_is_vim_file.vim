@@ -1,6 +1,6 @@
 " Function to source the current file if it's a .vim
 "
-" AUTHOR: Dahan Schuster
+" AUTHOR: Indira Lima
 function! SourceIfIsVimFile()
 	let s:filetype = expand("%:e")
 	if s:filetype != 'vim'

@@ -7,7 +7,7 @@
 " closes them, and then saves the workspce and writes to all
 " buffers. If quit_after is set to 1, quits all buffers too
 "
-" AUTHOR: Dahan Schuster
+" AUTHOR: Indira Lima
 function! MySaveWorkspace(quit_after)
 	if HasNvimTreeBuffer()
 		NvimTreeClose

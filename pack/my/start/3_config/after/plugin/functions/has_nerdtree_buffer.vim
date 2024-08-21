@@ -4,7 +4,7 @@
 " If the filetype of a buffer is "nerdtree", it returns 1,
 " otherwise returns 0
 "
-" AUTHOR: Dahan Schuster
+" AUTHOR: Indira Lima
 function! HasNERDTreeBuffer()
 	let buffers = nvim_list_bufs()
   for b in buffers

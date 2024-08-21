@@ -4,7 +4,7 @@
 " If the filetype of a buffer is "NvimTree", it returns 1,
 " otherwise returns 0
 "
-" AUTHOR: Dahan Schuster
+" AUTHOR: Indira Lima
 function! HasNvimTreeBuffer()
 	let buffers = nvim_list_bufs()
   for b in buffers

@@ -1,6 +1,6 @@
 " Open a terminal in a horizontal buffer
 "
-" AUTHOR: Dahan Schuster
+" AUTHOR: Indira Lima
 function! OpenTerminalHorizontal()
 	new
 	terminal
