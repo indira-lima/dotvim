@@ -91,3 +91,20 @@ const styles = StyleSheet.create({
 
 export default styles;
 endsnippet
+
+snippet handle "Método handle dos controllers do Adonis" b
+  public async handle({ response, request }: HttpContextContract) {
+    const $1 = await $2.query()
+
+    response.send({
+      success: true,
+      $1,
+    });
+  }
+endsnippet
+
+snippet rg "Adonis Route Group" b
+Route.group(() => {
+  Route.get("/", "$2").middleware("auth:$3");
+}).prefix("$1");
+endsnippet

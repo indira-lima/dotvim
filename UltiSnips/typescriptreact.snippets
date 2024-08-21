@@ -48,7 +48,7 @@ snippet cb "TSX Comentary block" b
 endsnippet
 
 snippet newContext "Create a new React Context" b
-import React from "react";
+import { FC, ReactNode, createContext, useContext, useState } from "react";
 
 interface $1ContextValue {
 	$3: $4,
