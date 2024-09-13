@@ -1,8 +1,21 @@
 {
   "coc.preferences.formatOnSave": true,
 
-  "pyright.enable": false,
-  "python.formatting.autopep8Path": "~/.local/bin/autopep8",
+  "pyright.enable": true,
+  "workspace.rootPatterns": [
+    ".git",
+    ".env",
+    "venv",
+    ".venv",
+    "setup.cfg",
+    "setup.py",
+    "pyproject.toml",
+    "pyrightconfig.json"
+  ],
+  "python.pythonPath": "/usr/bin/python3",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
 
   "snippets.ultisnips.pythonPrompt": false,
 

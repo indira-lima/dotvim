@@ -23,6 +23,7 @@ call PackAdd('neoclide/coc.nvim', {'do': {-> MyCocInstall()}})
 "" General
 call coc#add_extension('coc-json')
 call coc#add_extension('coc-snippets')
+call coc#add_extension('coc-git')
 " call coc#add_extension('coc-ultisnips')
 
 "" Js, Ts, React
@@ -35,6 +36,7 @@ call coc#add_extension('coc-css')
 
 "" Python
 call coc#add_extension('coc-pyright')
+call coc#add_extension('coc-yaml')
 
 "" Vim
 call coc#add_extension('coc-vimlsp')
@@ -88,10 +90,15 @@ endfunction
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" GoTo code navigation.
+" Open definition
 nmap <silent> gd <Plug>(coc-definition)
+" Open definition in a split window
+nmap <silent> gv :vsp<CR><Plug>(coc-definition)<C-W>L
+" Open type definition
 nmap <silent> gy <Plug>(coc-type-definition)
+" Open implementation
 nmap <silent> gi <Plug>(coc-implementation)
+" Open reference
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
