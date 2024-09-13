@@ -52,4 +52,7 @@ nnoremap <silent> <leader>w :w<CR>
 " Copy selection to clipboard
 vnoremap <silent> <leader>cc "+y
 
+" Run Python in new terminal
+nnoremap <silent> <leader>rp :terminal source ./.venv/bin/activate && python %<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""

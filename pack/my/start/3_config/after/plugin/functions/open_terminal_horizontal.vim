@@ -7,5 +7,6 @@ function! OpenTerminalHorizontal()
 	set nonumber
 	set norelativenumber
 	normal i
+	resize 10
 endfunction
 
