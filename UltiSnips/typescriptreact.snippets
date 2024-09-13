@@ -48,12 +48,19 @@ snippet cb "TSX Comentary block" b
 endsnippet
 
 snippet newContext "Create a new React Context" b
-import { FC, ReactNode, createContext, useContext, useState } from "react";
+import {
+  Dispatch,
+  FC,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from "react";
 
 interface $1ContextValue {
 	$3: $4,
-	set${3/\w+\s*/\u$0/}: (x: $4) => void;
-	
+	set${3/\w+\s*/\u$0/}: Dispatch<SetStateAction<$4>>,
 }
 
 const $1Context = createContext<$1ContextValue | null>(null);
