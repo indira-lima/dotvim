@@ -108,3 +108,11 @@ Route.group(() => {
   Route.get("/", "$2").middleware("auth:$3");
 }).prefix("$1");
 endsnippet
+
+snippet validate "Validate Adonis request params" b
+const data = await request.validate({
+  schema: schema.create({
+    $1
+  })
+})
+endsnippet
