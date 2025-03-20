@@ -6,6 +6,8 @@ let g:MyMinpacSetupPluginLoaded = 1
 " Install a plugin as optional and load it directly.
 " This allows before and after configs for a plugin in the same contained config file.
 " This also prevents plugins to be loaded implicitly just by being installed.
+"
+" https://github.com/k-takata/minpac?tab=readme-ov-file#minpacaddurl-config
 function! PackAdd(...) abort
   let url = get(a:000, '0')
   let options = get(a:000, '1', {})

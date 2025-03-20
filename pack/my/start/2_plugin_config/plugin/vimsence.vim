@@ -1,3 +1,4 @@
+finish " não funciona com WSL 2
 PackAdd hi-im-vika/vimsence
 
 let g:vimsence_small_text = 'NeoVim'
