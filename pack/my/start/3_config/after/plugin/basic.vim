@@ -7,7 +7,7 @@ set encoding=utf-8      " set encoding to UTF-8 (default was "latin1")
 set mouse=a             " enable mouse support (might not work well on Mac OS X)
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching parentheses / brackets [{()}]
-set laststatus=2        " always show statusline (even with only single window)
+set laststatus=3        " always show statusline (even with only single window)
 set ruler               " show line and column number of the cursor on right side of statusline
 set visualbell          " blink cursor on error, instead of beeping
 set cursorline          " highlight current line

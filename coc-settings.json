@@ -51,7 +51,7 @@
   "vimlsp.diagnostic.enable": true,
   "languageserver": {
     "vimls": {
-      "module": "~/.nvm/versions/node/v18.15.0/bin/vim-language-server",
+      "module": "~/.nvm/versions/node/v20.17.0/bin/vim-language-server",
       "args": ["--node-ipc"],
       "initializationOptions": {
         "isNeovim": true, // is neovim, default false
