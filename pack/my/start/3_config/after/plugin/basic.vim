@@ -30,9 +30,6 @@ set hlsearch            " highlight matches
 
 """" Vim Appearance
 
-" put colorscheme files in ~/.vim/colors/
-" colorscheme  badwolf " cyberpunk-neon      good colorschemes: murphy, slate, molokai, badwolf, solarized
-
 set termguicolors				" Enables 24-bit RGB color
 
 set guifont=MesloLGS\ NF\ 11 
