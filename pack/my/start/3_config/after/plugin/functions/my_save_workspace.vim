@@ -13,6 +13,13 @@ function! MySaveWorkspace(quit_after)
 		NvimTreeClose
 	endif
 
+	" Close any Avante buffer if present
+	for buf in getbufinfo()
+		if has_key(buf.variables, 'is_avante_sidebar_buffer')
+			execute "bdelete " . buf.bufnr
+		endif
+	endfor
+
 	" closes all unactive buffers (vim-workspace command)
 	" 
 	" NOTE: after using babar.nvim, closing hidden buffers
