@@ -15,6 +15,14 @@ call PackAdd('yetone/avante.nvim', {'branch': 'main', 'do': 'make'})
 autocmd! User avante.nvim
 
 lua << EOF
+
+require('render-markdown').setup({
+    completions = { lsp = { enabled = true } },
+		--heading = {
+    --   icons = { ' ', '󰲣 ', '󰲥 ', '󰲧 ', '󰲩 ', '󰲫 ' },
+		--}
+})
+
 require('avante').setup({
   ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
   provider = "claude", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
