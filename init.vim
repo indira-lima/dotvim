@@ -13,6 +13,7 @@ let g:loaded_netrwPlugin = 1
 
 "" Environment configuration
 let g:enablenvim=1
+let g:loaded_perl_provider = 0
 
 " Configura o caminho de busca de arquivos de script do Neovim
 " A sintaxe .,, significa que o Neovim primeiro procurará arquivos
