@@ -66,7 +66,7 @@ require'barbar'.setup {
 
 	-- Excludes buffers from the tabline
   exclude_ft = {'fugitive'},
-  exclude_name = {'/usr/bin/zsh', 'nvim'},
+  exclude_name = {'/usr/bin/zsh', 'zsh', 'nvim'},
 
   -- A buffer to this direction will be focused (if it exists) when closing the current buffer.
   -- Valid options are 'left' (the default), 'previous', and 'right'
@@ -89,7 +89,7 @@ require'barbar'.setup {
     -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
     buffer_index = true,
     buffer_number = false,
-    button = '',
+    button = '',
     -- Enables / disables diagnostic symbols
     diagnostics = {
       [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
@@ -110,7 +110,7 @@ require'barbar'.setup {
       -- Requires `nvim-web-devicons` if `true`
       enabled = true,
     },
-    separator = {left = '|', right = ''},
+    separator = {left = '', right = '|'},
 
     -- If true, add an additional separator at the end of the buffer list
     separator_at_end = true,
@@ -130,7 +130,7 @@ require'barbar'.setup {
   minimum_padding = 1,
 
   -- Sets the maximum buffer name length.
-  maximum_length = 30,
+  maximum_length = 50,
 
   -- Sets the minimum buffer name length.
   minimum_length = 10,
