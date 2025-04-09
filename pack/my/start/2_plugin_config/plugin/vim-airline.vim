@@ -1,4 +1,7 @@
 " Nice and clean status bar for vim
 PackAdd vim-airline/vim-airline
+PackAdd vim-airline/vim-airline-themes
 
-set statusline^=%{coc#status()}
+let g:airline_theme='soda'
+
+" set statusline^=%{coc#status()}
