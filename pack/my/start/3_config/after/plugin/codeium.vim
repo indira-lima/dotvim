@@ -9,4 +9,4 @@ imap <C-l>   <Cmd>call codeium#CycleCompletions(1)<CR>
 imap <C-h>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-c>   <Cmd>call codeium#Clear()<CR>
 
-set statusline+=\{…\}%3{codeium#GetStatusString()}
+" set statusline+=\{…\}%3{codeium#GetStatusString()}
