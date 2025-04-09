@@ -65,6 +65,9 @@ require('avante').setup({
       prev = "<M-[>",
       dismiss = "<C-]>",
     },
+    files = {
+      add_current = "<leader>ab", -- Add current buffer to selected files
+    },	
     jump = {
       next = "]]",
       prev = "[[",
