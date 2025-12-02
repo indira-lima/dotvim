@@ -1,7 +1,7 @@
 extends typescript
 
 snippet rnfc "React Native Functional Component" b
-import { FC } from "react";
+import type { FC } from "react";
 import { View } from "react-native";
 
 interface ${1:`!p snip.rv = snip.basename`}Props {
@@ -23,7 +23,7 @@ export default $1;
 endsnippet
 
 snippet rfc "React Functional Component" b
-import { FC } from "react";
+import type { FC } from "react";
 
 interface ${1:`!p snip.rv = snip.basename`}Props {
 
@@ -108,4 +108,10 @@ const Svg$1: FC = () => {
 };
 
 export default Svg$1;
+endsnippet
+
+snippet ud "useDebonceEffect hook" b
+useDebonceEffect(() => {
+	$1
+}, [$2]$3);
 endsnippet
