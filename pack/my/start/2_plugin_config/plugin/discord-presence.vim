@@ -26,12 +26,12 @@ end
 
 local ipc_ok, err_msg = check_ipc()
 if not ipc_ok then
-  vim.notify(err_msg, vim.log.levels.WARN)
+  -- vim.notify(err_msg, vim.log.levels.WARN)
 end
 
 local ok, presence = pcall(require, "presence")
 if not ok then
-  vim.notify("Failed to load presence.nvim: " .. tostring(presence), vim.log.levels.ERROR)
+  -- vim.notify("Failed to load presence.nvim: " .. tostring(presence), vim.log.levels.ERROR)
   return
 end
 
@@ -42,11 +42,11 @@ vim.g.presence_debug = false
 require("presence").setup({
     -- General options
     client_id           = "793271441293967371",       -- Use your own Discord application client id (not recommended)
-    log_level           = "debug",                        -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
+    log_level           = "error",                    -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
     debounce_timeout    = 10,                         -- Number of seconds to debounce events 
     enable_line_number  = false,                      -- Displays the current line number instead of the current project
     blacklist           = {"^fzf$"},                  -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
-    buttons             = false,                       -- Configure Rich Presence button(s) 
+    buttons             = false,                      -- Configure Rich Presence button(s) 
     file_assets         = {},                         -- Custom file asset definitions keyed by file names and extensions 
     show_time           = true,                       -- Show the timer
     main_image          = "neovim",                   -- Main image display (either "neovim" or "file")
