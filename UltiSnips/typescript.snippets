@@ -116,3 +116,52 @@ const data = await request.validate({
   })
 })
 endsnippet
+
+snippet novaTask "Nova task do Adonis usando Verful" b
+import Logger from "@ioc:Adonis/Core/Logger";
+
+const NomeTask = "$1";
+
+const log = (message: string, level = "info", mergeObj: any = {}) => {
+  Logger.log(level, mergeObj, \`[${NomeTask}] ${message}\`);
+};
+
+/**
+ * Task doc
+ */
+const ${1:`!p snip.rv = snip.basename`} = async () => {
+  try {
+    log('Iniciando task');
+
+    log('Task finalizada');
+  } catch (e) {
+    log("Erro ao executar task", "error", e);
+  }
+};
+
+export default $1;
+endsnippet
+
+snippet yo "hohohohohohoho" b
+console.log('yohohohohohoho')
+endsnippet
+
+snippet novoComando "Novo comando do Adonis" b
+import { BaseCommand } from "@adonisjs/core/build/standalone";
+
+export default class ${1:`!p snip.rv = snip.basename`} extends BaseCommand {
+  public static commandName = "$2";
+  public static description = "$3";
+
+  public static settings = {
+    loadApp: true,
+    stayAlive: false,
+  };
+
+  public async run() {
+    this.logger.info("Iniciando comando");
+    $4
+    this.logger.info("Comando finalizado");
+  }
+}
+endsnippet
