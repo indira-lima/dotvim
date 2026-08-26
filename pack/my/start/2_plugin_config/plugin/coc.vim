@@ -30,7 +30,7 @@ call coc#add_extension('coc-git')
 call coc#add_extension('coc-tsserver')
 call coc#add_extension('coc-prettier')
 call coc#add_extension('coc-eslint')
-call coc#add_extension('coc-tslint')
+call coc#add_extension('coc-tslint-plugin')
 call coc#add_extension('coc-html')
 call coc#add_extension('coc-css')
 
