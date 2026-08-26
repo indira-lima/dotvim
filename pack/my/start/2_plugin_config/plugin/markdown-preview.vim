@@ -1,4 +1,3 @@
-finish
 if !g:enablenvim
 	finish
 endif
